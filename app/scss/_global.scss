@@ -1,0 +1,252 @@
+html,
+body{
+  height: 100%;
+}
+body{
+  color: $default;
+  font-size: 18px;
+  line-height: 130%;
+  @extend %roboto-400;
+  display: flex;
+  flex-direction: column;  
+}
+.main{
+  flex-grow: 1;
+}
+
+.container{
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a{
+  font-size: 16px;
+  color: $default;
+  @extend %quicksand-500;
+}
+
+.title{
+  @extend %roboto-700;
+  font-size:  clamp(32px, 5vw, 42px);
+  line-height: clamp(50px, 5vw, 60px);
+  color: $title;
+  margin-bottom: 35px;
+}
+
+.title2{
+  @extend %roboto-700;
+  font-size:  clamp(30px, 5vw, 38px);
+  line-height: 48px;
+  color: $title;
+  margin-bottom: 35px;
+}
+
+.btn{
+    border: none;
+    border-radius: 7px;
+    @extend %roboto-700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    background-color: $accent;
+    color: $bg;
+    cursor: pointer;
+}
+
+.red{
+    color: $accent;
+}
+.box-shadow{
+    box-shadow: 0 2px 21px rgba(0, 0, 0, .1), 0 20px 9px -10px rgba(0, 0, 0, .12);
+}
+.hover{
+    transition: all .3s;
+}
+.hover:hover{
+    opacity: 0.9;
+}
+.marcer-gren{
+    padding-left: 12px;
+    position: relative;
+}
+.marcer-gren::before{
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $accent2;
+    left: 0;
+    top: 8px;
+}
+
+.marcer-tel{
+    padding-left: 25px;
+    position: relative;
+}
+.marcer-tel::before{
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/icons/tel.svg);
+    left: 0;
+    top: 0;
+}
+
+.db{
+    display: block;
+    margin-top: -15px;
+
+}
+
+.decor{
+    background-color: $accent;
+    height: 2px;
+    max-width: 200px;
+    width: 100%;
+    transform: translate(-245px, 30px);
+    margin-left: 30px;
+    //width: calc((100% - 1230px)/2 - 20px);
+}
+
+.decor-card{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110px;
+    height: 110px;
+    background: #fbc4c4;
+    //opacity: 0.6;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 9px;
+    z-index: 10;
+    div{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 11;
+        width: 100px;
+        height: 100px;
+        background:#fb6666;
+        //opacity: 0.7;
+        border-top-left-radius: 100%;
+        border-bottom-right-radius: 9px;
+        div{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 12;
+            width: 90px;
+            height: 90px;
+            background: $accent;
+            //opacity: 1;
+            border-top-left-radius: 100%;
+            border-bottom-right-radius: 9px;
+        }
+    }
+}
+
+//block 
+.parallelogram {
+      width: 180px;
+      height: 35px;
+      background-color: $accent;
+      border-radius: 7px;
+      transform: skew(-20deg);
+      margin: 20px;
+}
+.advertising{
+    position: relative;
+}
+.advertising-white{
+    border: 1px solid $default;
+    background-color: $bg;
+    transform: translate(-30px, -7px);
+}
+
+.subtitle{
+    transform: translateX(-20px);
+    padding-right: 15px;
+    margin: 0 auto 30px;
+    position: relative;
+    width: 200px;
+    span{
+        color: $bg;
+        position: absolute;
+        transform: translateX(50%);
+        top: 5px;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.yes{
+    position: relative;
+    padding-left: 60px;
+}
+.yes::before{
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    background-image: url(../images/icons/yes.png);
+    left: 0;
+    top: 0;
+}
+
+
+/*Модальная форма*/
+.modal_form{
+  max-width: 580px; /*Ширина формы*/
+  width: 94%;
+  height: 590px; /*Высота формы*/
+  text-align: center;
+  display:none;
+  position:fixed;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  margin:auto;
+  background: #fff;
+  border: 2px solid $accent;  
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-shadow: 0 0 50px 0 #000;
+  z-index: 100;
+  .title2{
+      color: $title;
+  }
+  .form{
+      margin: 0 auto;
+      padding: 30px;
+  }
+}
+/*Кнопка закрыть*/
+.close_button {
+  position:absolute;
+  right:-2px;
+  top:-2px;
+  z-index:1000;
+  padding:0px;
+  margin:0px;
+  font-family: sans-serif;
+  font-size:22px;
+  widtH:25px;
+  height:25px;
+  border-radius:50%;
+  background-color: $accent;
+  color: #eee;
+  text-align:center;
+  border:1px solid $accent;
+  cursor:pointer;
+  line-height: 25px;
+}
+
+.close_button:hover {
+  background-color: $accent;
+  color: #fff;
+}
